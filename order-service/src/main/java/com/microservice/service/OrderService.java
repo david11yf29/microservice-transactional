@@ -36,6 +36,8 @@ public class OrderService {
         Order order = orderDTOtoEntityMapper.map(orderRequestDTO);
         order = orderRepository.save(order);
 
+//        System.out.println(10/0);
+
         Outbox outbox = orderEntityToOutboxEntityMapper.map(order);
         outboxRepository.save(outbox);
 
